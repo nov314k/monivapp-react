@@ -1,0 +1,1 @@
+React client for _monivapp_ (Movie Night Voting App)
