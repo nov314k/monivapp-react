@@ -1,9 +1,9 @@
+import PropTypes from "prop-types";
 import React, { Component } from "react";
-import MovieBox from "./Movie/MovieBox";
-import SuggestAMovieButton from "./Movie/SuggestAMovieButton";
 import { connect } from "react-redux";
 import { getMovies } from "../actions/movieActions";
-import PropTypes from "prop-types";
+import MovieBox from "./Movie/MovieBox";
+import SuggestAMovieButton from "./Movie/SuggestAMovieButton";
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -11,7 +11,7 @@ class Dashboard extends Component {
   }
 
   render() {
-    const { projects } = this.props.project;
+    const { movies } = this.props.movie;
     return (
       <div className="projects">
         <div className="container">
@@ -20,8 +20,8 @@ class Dashboard extends Component {
               <SuggestAMovieButton />
               <br />
               <hr />
-              {projects.map(project => (
-                <MovieBox key={project.id} project={project} />
+              {movies.map(movie => (
+                <MovieBox key={movie.id} movie={movie} />
               ))}
             </div>
           </div>
@@ -32,12 +32,12 @@ class Dashboard extends Component {
 }
 
 Dashboard.propTypes = {
-  project: PropTypes.object.isRequired,
+  movie: PropTypes.object.isRequired,
   getMovies: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
-  project: state.project
+  movie: state.movie
 });
 
 export default connect(mapStateToProps, { getMovies })(Dashboard);

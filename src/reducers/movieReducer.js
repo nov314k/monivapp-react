@@ -1,8 +1,8 @@
 import { GET_MOVIES } from "../actions/types";
 
 const initialState = {
-  projects: [],
-  project: {}
+  movies: [],
+  movie: {}
 };
 
 export default function(state = initialState, action) {
@@ -10,7 +10,7 @@ export default function(state = initialState, action) {
     case GET_MOVIES:
       return {
         ...state,
-        projects: action.payload
+        movies: action.payload
       };
     default:
       return state;

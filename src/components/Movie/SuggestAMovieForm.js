@@ -9,11 +9,8 @@ class SuggestAMovieForm extends Component {
     super();
 
     this.state = {
-      projectName: "",
-      projectIdentifier: "",
-      description: "",
-      start_date: "",
-      end_date: "",
+      title: "",
+      votes: "",
       errors: {}
     };
 
@@ -21,7 +18,6 @@ class SuggestAMovieForm extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  // Lifecycle hook
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       this.setState({ errors: nextProps.errors });
@@ -34,14 +30,11 @@ class SuggestAMovieForm extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    const newProject = {
-      projectName: this.state.projectName,
-      projectIdentifier: this.state.projectIdentifier,
-      description: this.state.description,
-      start_date: this.state.start_date,
-      end_date: this.state.end_date
+    const newMovie = {
+      title: this.state.title,
+      votes: this.state.votes
     };
-    this.props.suggestMovie(newProject, this.props.history);
+    this.props.suggestMovie(newMovie, this.props.history);
   }
 
   render() {
@@ -61,14 +54,14 @@ class SuggestAMovieForm extends Component {
                     <input
                       type="text"
                       className={classnames("form-control form-control-lg", {
-                        is_invalid: errors.projectName
+                        is_invalid: errors.title
                       })}
                       placeholder="Enter a movie title"
-                      name="projectName"
-                      value={this.state.projectName}
+                      name="title"
+                      value={this.state.title}
                       onChange={this.onChange}
                     />
-                    <p>{errors.projectIdentifier}</p>
+                    <p>{errors.title}</p>
                   </div>
                   <input
                     type="submit"
