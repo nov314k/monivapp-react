@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const CreateProjectButton = () => {
+const SuggestAMovieButton = () => {
   return (
     <React.Fragment>
-      <Link to="/addProject" className="btn btn-lg btn-info">
+      <Link to="/suggestMovie" className="btn btn-lg btn-info">
         Suggest a movie to watch
       </Link>
     </React.Fragment>
   );
 };
 
-export default CreateProjectButton;
+export default SuggestAMovieButton;

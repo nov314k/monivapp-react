@@ -1,7 +1,7 @@
 import axios from "axios";
-import { GET_ERRORS, GET_PROJECTS } from "./types";
+import { GET_ERRORS, GET_MOVIES } from "./types";
 
-export const createProject = (project, history) => async dispatch => {
+export const suggestMovie = (project, history) => async dispatch => {
   try {
     const res = await axios.post("http://localhost:8080/api/project", project);
     history.push("/dashboard");
@@ -13,10 +13,10 @@ export const createProject = (project, history) => async dispatch => {
   }
 };
 
-export const getProjects = () => async dispatch => {
+export const getMovies = () => async dispatch => {
   const res = await axios.get("http://localhost:8080/api/project/all");
   dispatch({
-    type: GET_PROJECTS,
+    type: GET_MOVIES,
     payload: res.data
   });
 };

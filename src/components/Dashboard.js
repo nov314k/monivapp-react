@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import ProjectItem from "./Project/ProjectItem";
-import CreateProjectButton from "./Project/CreateProjectButton";
+import MovieBox from "./Movie/MovieBox";
+import SuggestAMovieButton from "./Movie/SuggestAMovieButton";
 import { connect } from "react-redux";
-import { getProjects } from "../actions/projectActions";
+import { getMovies } from "../actions/movieActions";
 import PropTypes from "prop-types";
 
 class Dashboard extends Component {
   componentDidMount() {
-    this.props.getProjects();
+    this.props.getMovies();
   }
 
   render() {
@@ -17,11 +17,11 @@ class Dashboard extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <CreateProjectButton />
+              <SuggestAMovieButton />
               <br />
               <hr />
               {projects.map(project => (
-                <ProjectItem key={project.id} project={project} />
+                <MovieBox key={project.id} project={project} />
               ))}
             </div>
           </div>
@@ -33,11 +33,11 @@ class Dashboard extends Component {
 
 Dashboard.propTypes = {
   project: PropTypes.object.isRequired,
-  getProjects: PropTypes.func.isRequired
+  getMovies: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
   project: state.project
 });
 
-export default connect(mapStateToProps, { getProjects })(Dashboard);
+export default connect(mapStateToProps, { getMovies })(Dashboard);

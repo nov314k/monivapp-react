@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class ProjectItem extends Component {
+class MovieBox extends Component {
   render() {
     const { project } = this.props;
     return (
@@ -43,4 +43,4 @@ class ProjectItem extends Component {
   }
 }
 
-export default ProjectItem;
+export default MovieBox;

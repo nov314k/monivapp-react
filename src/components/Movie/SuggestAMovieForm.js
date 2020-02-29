@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { createProject } from "../../actions/projectActions";
 import classnames from "classnames";
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { suggestMovie } from "../../actions/movieActions";
 
-class AddProject extends Component {
+class SuggestAMovieForm extends Component {
   constructor() {
     super();
 
@@ -41,7 +41,7 @@ class AddProject extends Component {
       start_date: this.state.start_date,
       end_date: this.state.end_date
     };
-    this.props.createProject(newProject, this.props.history);
+    this.props.suggestMovie(newProject, this.props.history);
   }
 
   render() {
@@ -84,8 +84,8 @@ class AddProject extends Component {
   }
 }
 
-AddProject.propTypes = {
-  createProject: PropTypes.func.isRequired,
+SuggestAMovieForm.propTypes = {
+  suggestMovie: PropTypes.func.isRequired,
   errors: PropTypes.object.isRequired
 };
 
@@ -93,4 +93,4 @@ const mapStateToProps = state => ({
   errors: state.errors
 });
 
-export default connect(mapStateToProps, { createProject })(AddProject);
+export default connect(mapStateToProps, { suggestMovie })(SuggestAMovieForm);
