@@ -11,7 +11,7 @@ export const getMovies = () => async dispatch => {
 
 export const suggestMovie = (movie, history) => async dispatch => {
   try {
-    const res = await axios.post("http://localhost:8080/api/project", movie);
+    const res = await axios.post("http://localhost:8080/rest/movies", movie);
     history.push("/dashboard");
   } catch (err) {
     dispatch({

@@ -10,7 +10,6 @@ class SuggestAMovieForm extends Component {
 
     this.state = {
       title: "",
-      votes: "",
       errors: {}
     };
 
@@ -31,8 +30,7 @@ class SuggestAMovieForm extends Component {
   onSubmit(e) {
     e.preventDefault();
     const newMovie = {
-      title: this.state.title,
-      votes: this.state.votes
+      title: this.state.title
     };
     this.props.suggestMovie(newMovie, this.props.history);
   }

@@ -56,6 +56,14 @@ class MovieBox extends Component {
                 {" "}
                 Vote for this movie
               </span>
+              <br />
+              <span
+                onClick={this.voteForThisMovie}
+                className="btn btn-md btn-info text-center mt-2"
+              >
+                {" "}
+                Vote via update form
+              </span>
             </div>
           </div>
         </div>
