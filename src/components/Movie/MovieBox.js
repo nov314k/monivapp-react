@@ -38,14 +38,6 @@ class MovieBox extends Component {
                 Vote for this movie
               </span>
               <br />
-              <Link
-                to={`/voteMovie/${movie.id}`}
-                className="btn btn-md btn-info text-center mt-2"
-              >
-                {" "}
-                Vote via update form
-              </Link>
-              <br />
               <span
                 className="btn btn-md btn-info text-center mt-2"
                 onClick={this.onVoteMovieClick.bind(this, movie.id)}
