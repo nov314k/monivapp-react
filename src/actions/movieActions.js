@@ -19,7 +19,7 @@ export const suggestMovie = (movie, history) => async dispatch => {
 
   try {
     const res = await axios.post("/rest/movies", movie);
-    history.push("/dashboard");
+    history.push("/");
   } catch (err) {
     dispatch({
       type: GET_ERRORS,

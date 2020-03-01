@@ -18,7 +18,6 @@ class Dashboard extends Component {
           <div className="row">
             <div className="col-md-12">
               <SuggestAMovieButton />
-              <br />
               <hr />
               {movies.map(movie => (
                 <MovieBox key={movie.id} movie={movie} votes={movie.votes} />

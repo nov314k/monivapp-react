@@ -13,31 +13,24 @@ class MovieBox extends Component {
     const movie = this.props.movie;
     return (
       <div className="container">
-        <div className="card card-body bg-light mb-3">
-          <div className="row">
-            <div className="col-2">
-              <span className="mx-auto">
-                <img src="logo192.png" />
-              </span>
-            </div>
-
-            <div className="col-lg-6 col-md-4 col-8">
-              <h3>{movie.title}</h3>
-              <p>
-                In ancient Maori times, an undead warrior and a young
-                tribeswoman team up to find a way to stop the evil dead from
-                rising.
-              </p>
-            </div>
-
-            <div className="col-md-4 d-none d-lg-block">
-              <span className="">Votes: {movie.votes}</span>
-              <br />
+        <div class="card mb-3">
+          <h5 class="card-header text-center">
+            {movie.votes}{" "}
+            <span class="text-muted text-monospace font-italic">VOTES</span>
+          </h5>
+          <div class="card-body">
+            <h5 class="card-title">{movie.title}</h5>
+            <p class="card-text">
+              A programmer is brought back to reason and reality when learning
+              he was living in a program created by gigantic machines which make
+              human birth artificial. In order to set humanity free, Neo will
+              have to face many enemies by using technologies and self-trust.
+            </p>
+            <div class="text-left">
               <span
-                className="btn btn-md btn-info text-center mt-2"
+                class="btn btn-sm btn-info text-center"
                 onClick={this.onVoteMovieClick.bind(this, movie.id)}
               >
-                {" "}
                 Vote for this movie
               </span>
             </div>

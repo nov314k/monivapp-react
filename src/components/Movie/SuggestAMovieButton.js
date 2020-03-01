@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 const SuggestAMovieButton = () => {
   return (
     <React.Fragment>
-      <Link to="/suggestMovie" className="btn btn-lg btn-info">
-        Suggest a movie to watch
-      </Link>
+      <div class="text-right">
+        <Link to="/suggestMovie" className="btn btn-info btn-sm">
+          Suggest a movie to watch
+        </Link>
+      </div>
     </React.Fragment>
   );
 };

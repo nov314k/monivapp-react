@@ -63,12 +63,11 @@ class SuggestAMovieForm extends Component {
                     />
                     <p>{errors.title}</p>
                   </div>
-                  <input
-                    type="submit"
-                    className="btn btn-primary btn-block mt-4"
-                  />
+                  <div class="text-center">
+                    <input type="submit" className="btn btn-sm btn-info" />
+                  </div>
                 </form>
-                <p class="text-right mt-3">
+                <p class="text-center mt-3">
                   <a href="/">Back to movies list</a>
                 </p>
               </div>
