@@ -33,11 +33,6 @@ class MovieBox extends Component {
             <div className="col-md-4 d-none d-lg-block">
               <span className="">Votes: {movie.votes}</span>
               <br />
-              <span className="btn btn-md btn-info text-center">
-                {" "}
-                Vote for this movie
-              </span>
-              <br />
               <span
                 className="btn btn-md btn-info text-center mt-2"
                 onClick={this.onVoteMovieClick.bind(this, movie.id)}
