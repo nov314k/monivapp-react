@@ -56,7 +56,7 @@ class SuggestAMovieForm extends Component {
                       className={classnames("form-control form-control-lg", {
                         is_invalid: errors.title
                       })}
-                      placeholder="Enter a movie title"
+                      placeholder="Enter movie title"
                       name="title"
                       value={this.state.title}
                       onChange={this.onChange}
@@ -68,6 +68,9 @@ class SuggestAMovieForm extends Component {
                     className="btn btn-primary btn-block mt-4"
                   />
                 </form>
+                <p class="text-right mt-3">
+                  <a href="/">Back to movies list</a>
+                </p>
               </div>
             </div>
           </div>
