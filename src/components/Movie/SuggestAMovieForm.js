@@ -9,7 +9,9 @@ class SuggestAMovieForm extends Component {
     super();
 
     this.state = {
+      id: "",
       title: "",
+      votes: "",
       errors: {}
     };
 

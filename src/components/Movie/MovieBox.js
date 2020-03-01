@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { voteForAMovie } from "../../actions/movieActions";
+import { Link } from "react-router-dom";
 
 class MovieBox extends Component {
   constructor() {
@@ -57,13 +58,13 @@ class MovieBox extends Component {
                 Vote for this movie
               </span>
               <br />
-              <span
-                onClick={this.voteForThisMovie}
+              <Link
+                to={`/voteMovie/${movie.id}`}
                 className="btn btn-md btn-info text-center mt-2"
               >
                 {" "}
                 Vote via update form
-              </span>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_ERRORS, GET_MOVIES } from "./types";
+import { GET_ERRORS, GET_MOVIES, GET_MOVIE } from "./types";
 
 export const getMovies = () => async dispatch => {
   const res = await axios.get("http://localhost:8080/rest/movies");
@@ -10,6 +10,13 @@ export const getMovies = () => async dispatch => {
 };
 
 export const suggestMovie = (movie, history) => async dispatch => {
+  let axiosConfig = {
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*"
+    }
+  };
+
   try {
     const res = await axios.post("http://localhost:8080/rest/movies", movie);
     history.push("/dashboard");
@@ -23,4 +30,12 @@ export const suggestMovie = (movie, history) => async dispatch => {
 
 export const voteForAMovie = () => async dispatch => {
   const res = await axios.get("http://localhost:8080/rest/movies/vote/1");
+};
+
+export const getMovie = (id, history) => async dispatch => {
+  const res = await axios.get(`http://localhost:8080/rest/movies/${id}`);
+  dispatch({
+    type: GET_MOVIE,
+    payload: res.data
+  });
 };
