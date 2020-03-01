@@ -18,7 +18,6 @@ class App extends Component {
             <Header />
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/suggestMovie" component={SuggestAMovieForm} />
-            <Route exact path="/voteMovie/:id" component={VoteForAMovieForm} />
           </div>
         </Router>
       </Provider>

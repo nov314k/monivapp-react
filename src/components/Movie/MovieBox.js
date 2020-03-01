@@ -38,7 +38,7 @@ class MovieBox extends Component {
                 onClick={this.onVoteMovieClick.bind(this, movie.id)}
               >
                 {" "}
-                Vote
+                Vote for this movie
               </span>
             </div>
           </div>
