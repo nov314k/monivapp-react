@@ -1,5 +1,5 @@
 {
-  "name": "ppmtool-react-client",
+  "name": "monivapp-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -23,7 +23,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://monivapp.cfapps.io/api",
+  "proxy": "http://monivapp.cfapps.io/api",
   "eslintConfig": {
     "extends": "react-app"
   },

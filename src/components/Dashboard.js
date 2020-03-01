@@ -11,7 +11,7 @@ class Dashboard extends Component {
   }
 
   render() {
-    const { movies } = this.props.movie;
+    const movies = this.props.movie.movies;
     return (
       <div className="projects">
         <div className="container">

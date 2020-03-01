@@ -64,7 +64,11 @@ class SuggestAMovieForm extends Component {
                     <p>{errors.title}</p>
                   </div>
                   <div class="text-center">
-                    <input type="submit" className="btn btn-sm btn-info" />
+                    <input
+                      type="submit"
+                      className="btn btn-sm btn-info"
+                      value="Confirm"
+                    />
                   </div>
                 </form>
                 <p class="text-center mt-3">
