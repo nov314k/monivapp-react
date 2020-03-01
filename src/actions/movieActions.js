@@ -28,8 +28,8 @@ export const suggestMovie = (movie, history) => async dispatch => {
   }
 };
 
-export const voteForAMovie = () => async dispatch => {
-  const res = await axios.get("http://localhost:8080/rest/movies/vote/1");
+export const voteForAMovie = (id, history) => async dispatch => {
+  const res = await axios.get(`http://localhost:8080/rest/movies/vote/${id}`);
 };
 
 export const getMovie = (id, history) => async dispatch => {

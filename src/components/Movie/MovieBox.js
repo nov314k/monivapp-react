@@ -17,7 +17,7 @@ class MovieBox extends Component {
 
   voteForThisMovie(e) {
     e.preventDefault();
-    this.props.voteForAMovie(null, this.props.history);
+    this.props.voteForAMovie(1, this.props.history);
   }
 
   componentWillReceiveProps(nextProps) {
