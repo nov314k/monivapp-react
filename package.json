@@ -23,7 +23,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://monivapp.cfapps.io/api",
+  "proxy": "http://localhost:8080/rest",
   "eslintConfig": {
     "extends": "react-app"
   },
