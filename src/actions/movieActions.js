@@ -2,7 +2,7 @@ import axios from "axios";
 import { GET_ERRORS, GET_MOVIES, GET_MOVIE, VOTE_MOVIE } from "./types";
 
 export const getMovies = () => async dispatch => {
-  const res = await axios.get("/rest/movies");
+  const res = await axios.get("/movies");
   dispatch({
     type: GET_MOVIES,
     payload: res.data
@@ -10,15 +10,8 @@ export const getMovies = () => async dispatch => {
 };
 
 export const suggestMovie = (movie, history) => async dispatch => {
-  let axiosConfig = {
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*"
-    }
-  };
-
   try {
-    const res = await axios.post("/rest/movies", movie);
+    const res = await axios.post("/movies", movie);
     history.push("/");
   } catch (err) {
     dispatch({
@@ -28,12 +21,8 @@ export const suggestMovie = (movie, history) => async dispatch => {
   }
 };
 
-export const voteForAMovie = (id, history) => async dispatch => {
-  const res = await axios.get(`/rest/movies/vote/${id}`);
-};
-
 export const getMovie = (id, history) => async dispatch => {
-  const res = await axios.get(`/rest/movies/${id}`);
+  const res = await axios.get(`/movies/${id}`);
   dispatch({
     type: GET_MOVIE,
     payload: res.data
@@ -41,7 +30,7 @@ export const getMovie = (id, history) => async dispatch => {
 };
 
 export const voteMovie = (id, history) => async dispatch => {
-  const res = await axios.get(`/rest/movies/vote/${id}`);
+  const res = await axios.get(`/movies/vote/${id}`);
   dispatch({
     type: VOTE_MOVIE,
     payload: id

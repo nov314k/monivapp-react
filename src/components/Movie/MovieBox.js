@@ -13,22 +13,22 @@ class MovieBox extends Component {
     const movie = this.props.movie;
     return (
       <div className="container">
-        <div class="card mb-3">
-          <h5 class="card-header text-center">
+        <div className="card mb-3">
+          <h5 className="card-header text-center">
             {movie.votes}{" "}
-            <span class="text-muted text-monospace font-italic">VOTES</span>
+            <span className="text-muted text-monospace font-italic">VOTES</span>
           </h5>
-          <div class="card-body">
-            <h5 class="card-title">{movie.title}</h5>
-            <p class="card-text">
+          <div className="card-body">
+            <h5 className="card-title">{movie.title}</h5>
+            <p className="card-text">
               A programmer is brought back to reason and reality when learning
               he was living in a program created by gigantic machines which make
               human birth artificial. In order to set humanity free, Neo will
               have to face many enemies by using technologies and self-trust.
             </p>
-            <div class="text-left">
+            <div className="text-left">
               <span
-                class="btn btn-sm btn-info text-center"
+                className="btn btn-sm btn-info text-center"
                 onClick={this.onVoteMovieClick.bind(this, movie.id)}
               >
                 Vote for this movie
