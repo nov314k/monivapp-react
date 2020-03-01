@@ -3,31 +3,15 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { voteForAMovie } from "../../actions/movieActions";
 import { Link } from "react-router-dom";
+import { voteMovie } from "../../actions/movieActions";
 
 class MovieBox extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      errors: {}
-    };
-
-    this.voteForThisMovie = this.voteForThisMovie.bind(this);
-  }
-
-  voteForThisMovie(e) {
-    e.preventDefault();
-    this.props.voteForAMovie(1, this.props.history);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.errors) {
-      this.setState({ errors: nextProps.errors });
-    }
-  }
+  onVoteMovieClick = id => {
+    this.props.voteMovie(id);
+  };
 
   render() {
-    const { movie } = this.props;
+    const movie = this.props.movie;
     return (
       <div className="container">
         <div className="card card-body bg-light mb-3">
@@ -50,10 +34,7 @@ class MovieBox extends Component {
             <div className="col-md-4 d-none d-lg-block">
               <span className="">Votes: {movie.votes}</span>
               <br />
-              <span
-                onClick={this.voteForThisMovie}
-                className="btn btn-md btn-info text-center"
-              >
+              <span className="btn btn-md btn-info text-center">
                 {" "}
                 Vote for this movie
               </span>
@@ -65,6 +46,14 @@ class MovieBox extends Component {
                 {" "}
                 Vote via update form
               </Link>
+              <br />
+              <span
+                className="btn btn-md btn-info text-center mt-2"
+                onClick={this.onVoteMovieClick.bind(this, movie.id)}
+              >
+                {" "}
+                Vote
+              </span>
             </div>
           </div>
         </div>
@@ -74,12 +63,7 @@ class MovieBox extends Component {
 }
 
 MovieBox.propTypes = {
-  voteForAMovie: PropTypes.func.isRequired,
-  errors: PropTypes.object.isRequired
+  voteMovie: PropTypes.func.isRequired
 };
 
-const mapStateToProps = state => ({
-  errors: state.errors
-});
-
-export default connect(mapStateToProps, { voteForAMovie })(MovieBox);
+export default connect(null, { voteMovie })(MovieBox);

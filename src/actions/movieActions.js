@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_ERRORS, GET_MOVIES, GET_MOVIE } from "./types";
+import { GET_ERRORS, GET_MOVIES, GET_MOVIE, VOTE_MOVIE } from "./types";
 
 export const getMovies = () => async dispatch => {
   const res = await axios.get("http://localhost:8080/rest/movies");
@@ -37,5 +37,13 @@ export const getMovie = (id, history) => async dispatch => {
   dispatch({
     type: GET_MOVIE,
     payload: res.data
+  });
+};
+
+export const voteMovie = (id, history) => async dispatch => {
+  const res = await axios.get(`http://localhost:8080/rest/movies/vote/${id}`);
+  dispatch({
+    type: VOTE_MOVIE,
+    payload: id
   });
 };

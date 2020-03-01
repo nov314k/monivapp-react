@@ -21,7 +21,7 @@ class Dashboard extends Component {
               <br />
               <hr />
               {movies.map(movie => (
-                <MovieBox key={movie.id} movie={movie} />
+                <MovieBox key={movie.id} movie={movie} votes={movie.votes} />
               ))}
             </div>
           </div>
